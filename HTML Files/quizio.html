@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="quizio.css">
+    <title>QuizIO Game</title>
+
+    <style>
+        iframe {
+            visibility: hidden;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <iframe width="841" height="473" src="https://www.youtube.com/embed/GNDWNW3IKwU?autoplay=1&loop=1" title="Cute Background Music No Copyright / Funny Background Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <div class="container">
+        <div class="headerBox">
+            <div class="backBtn">
+                <button>
+                    <a href="homepage.php">
+                        <img src="back-arrow.png" alt="">
+                    </a>
+                </button>
+            </div>
+        </div>
+        <div class="chapterBox">
+                <div class="weekChoice">
+                    <!--Chapter 1-->
+                    <a href="quizioWeekOne.php">
+                        <img src="WEEK 1 (QUIXIO CARD).png" alt="">
+                    </a>
+                    <!--Chapter 2-->
+                    <a href="quizioWeekTwo.php">
+                        <img src="WEEK 2 (QUIXIO CARD).png"alt="">
+                    </a>
+                    <!--Chapter 3-->
+                    <a href="quizioWeekThree.php">
+                        <img src="WEEK 3 (QUIXIO CARD).png" alt="">
+                    </a>
+                    <!--Chapter 4-->
+                    <a href="quizioWeekFour.php">
+                        <img src="WEEK 4 (QUIXIO CARD).png" alt="">
+                    </a>
+                    <!--Chapter 5-->
+                    <a href="quizioWeekFive.php">
+                        <img src="WEEK 5 (QUIXIO CARD).png" alt="">
+                    </a>
+                    <!--Chapter 5-->
+                    <a href="quizioWeekSix.php">
+                        <img src="WEEK 6 (QUIXIO CARD).png" alt="">
+                    </a>
+                    <!--Chapter 5-->
+                    <a href="quizioWeekSeven.php">
+                        <img src="WEEK 7 (QUIXIO CARD).png" alt="">
+                    </a>
+                </div>
+        </div>
+    </div>
+
+    <script>
+        const easyChapterContainer = document.getElementById('easyChapter')
+        const normalChapterContainer = document.getElementById('normalChapter')
+        const hardChapterContainer = document.getElementById('hardChapter')
+
+        const textBox = document.getElementById('textBox')
+        const text = document.getElementById('text')
+
+        const easyBtn = document.getElementById('easyBtn')
+        const normalBtn = document.getElementById('normalBtn')
+        const hardBtn = document.getElementById('hardBtn')
+
+        function easy() {
+            easyChapterContainer.style.display = "grid"
+            normalChapterContainer.style.display = "none"
+            hardChapterContainer.style.display = "none"
+
+            easyBtn.style.backgroundColor = "#548B7E"
+            easyBtn.style.color = "white"
+            normalBtn.style.backgroundColor = "white"
+            normalBtn.style.color = "black"
+            hardBtn.style.backgroundColor = "white"
+            hardBtn.style.color = "black"
+
+            textBox.style.backgroundColor = "#548B7E"
+            text.innerHTML = "EASY"
+        }
+
+        function normal() {
+            easyChapterContainer.style.display = "none"
+            normalChapterContainer.style.display = "grid"
+            hardChapterContainer.style.display = "none"
+
+            easyBtn.style.backgroundColor = "white"
+            easyBtn.style.color = "black"
+            normalBtn.style.backgroundColor = "#C97D5D"
+            normalBtn.style.color = "white"
+            hardBtn.style.backgroundColor = "white"
+            hardBtn.style.color = "black"
+            
+            textBox.style.backgroundColor = "#C97D5D"
+            text.innerHTML = "NORMAL"
+        }
+
+        function hard() {
+            easyChapterContainer.style.display = "none"
+            normalChapterContainer.style.display = "none"
+            hardChapterContainer.style.display = "grid"
+
+            easyBtn.style.backgroundColor = "white"
+            easyBtn.style.color = "black"
+            normalBtn.style.backgroundColor = "white"
+            normalBtn.style.color = "black"
+            hardBtn.style.backgroundColor = "#B97C7C"
+            hardBtn.style.color = "white"
+            
+            textBox.style.backgroundColor = "#B97C7C"
+            text.innerHTML = "HARD"
+        }
+    </script>
+</body>
+</html>

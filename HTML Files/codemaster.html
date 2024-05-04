@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="codemaster.css">
+    <title>Codemasters</title>
+
+    <style>
+        iframe {
+            visibility: hidden;
+            position: absolute;
+        }
+
+        .container .computer .computer-head .gameMech {
+            height: fit-content;
+        }
+        .container .computer .computer-head .gameMech .rule {
+            font-size: 50px;
+        }
+        .container .computer .computer-head .gameMech p {
+            font-size: 25px; 
+            margin: 10px 0 20px 0
+        }
+        .container .computer .computer-head .gameMech button {
+            width: 40%;
+            background-color: white;
+            padding: 10px 30px;
+            border: 3px solid black;
+            border-radius: 10px;
+            color: black;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .container .computer .computer-head .gameMech button:active {
+            transform: scale(0.95);
+        }
+
+        @media screen and (max-width: 430px) {
+            .container .computer .computer-head .gameMech .rule {
+                font-size: 35px;
+            }
+            .container .computer .computer-head .gameMech p {
+                font-size: 20px; 
+                margin: 10px 0 20px 0
+            }
+            .container .computer .computer-head .gameMech button {
+                font-size: 15px;
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 375px) {
+            .container .computer .computer-head .gameMech .rule {
+                font-size: 25px;
+            }
+            .container .computer .computer-head .gameMech p {
+                font-size: 18px; 
+                margin: 10px 0 20px 0
+            }
+            .container .computer .computer-head .gameMech button {
+                font-size: 15px;
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<iframe width="841" height="473" src="https://www.youtube.com/embed/GNDWNW3IKwU?autoplay=1&loop=1" title="Cute Background Music No Copyright / Funny Background Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <div class="container">
+        <div class="backBtnContainer" id="backBtnContainer">
+            <button>
+                <a href="homepage.php">
+                    <img src="back-arrow.png" alt="">
+                </a>
+            </button>
+        </div>
+        <div class="table">
+            <div class="upperTable">
+                <div class="timer">
+                    <div class="timerButton"></div>
+                    <div class="timerText">10:00</div>
+                    <div class="timerStand"></div>
+                </div>
+                <div class="book">
+                    <div class="book1"></div>
+                    <div class="book2"></div>
+                    <div class="book3"></div>
+                </div>
+            </div>
+            <div class="middleTable"></div>
+            <div class="lowerTable">
+                <div id="wrongCount">0</div>
+                <div id="correctCount">0</div>
+            </div>
+        </div>
+        <div class="computer">
+            <div class="computer-head">
+                <div class="header">
+                    <button>
+                        <a href="">
+                            <img src="back-arrow.png" alt="">
+                        </a>
+                    </button>
+                </div>
+                <div class="difficultyContainer" id="difficultyContainer">
+                    <div class="chapterBox">
+                        <button>
+                            <a href="codemasterWeekOne.php">
+                                <img src="folder.png" alt="">
+                            </a>
+                        </button>
+                        <p>Chapter 1</p>
+                    </div>
+                    <div class="chapterBox">
+                        <button>
+                            <a href="codemasterWeekTwo.php">
+                                <img src="folder.png" alt="">
+                            </a>
+                        </button>
+                        <p>Chapter 2</p>
+                    </div>
+                    <div class="chapterBox">
+                        <button>
+                            <a href="codemasterWeekThree.php">
+                                <img src="folder.png" alt="">
+                            </a>
+                        </button>
+                        <p>Chapter 3</p>
+                    </div>
+                    <div class="chapterBox">
+                        <button>
+                            <a href="codemasterWeekFour.php">
+                                <img src="folder.png" alt="">
+                            </a>
+                        </button>
+                        <p>Chapter 4</p>
+                    </div>
+                    <div class="chapterBox">
+                        <button>
+                            <a href="codemasterWeekFive.php">
+                                <img src="folder.png" alt="">
+                            </a>
+                        </button>
+                        <p>Chapter 5</p>
+                    </div>
+                    <div class="chapterBox">
+                        <button>
+                            <a href="codemasterWeekSix.php">
+                                <img src="folder.png" alt="">
+                            </a>
+                        </button>
+                        <p>Chapter 6</p>
+                    </div>
+                    <div class="chapterBox">
+                        <button>
+                            <a href="codemasterWeekSeven.php">
+                                <img src="folder.png" alt="">
+                            </a>
+                        </button>
+                        <p>Chapter 7</p>
+                    </div>
+                    <div class="howToPlayBtn" id="howToPlayBtn"> 
+                        <button onclick="showMech()">
+                            <img src="folder.png" alt="">
+                        </button>
+                        <p>Game Mechanics</p>
+                    </div>
+                </div>
+                <div class="gameMech" id="gameMech" style="display: none;">
+                        <div class="rule">Game Mechanics</div>
+                        <p>Type the correct output of the code that will be shown. You will be given a time to answer, if the time run out that item will be marked as wrong.</p>
+                        <button onclick="hideMech()">Back to modes</button>
+                    </div>
+            </div>
+            <div class="computer-neck"></div>
+            <div class="computer-stand"></div>
+        </div>
+        
+    </div>
+
+    <script>
+        const difficultyContainer = document.getElementById('difficultyContainer')
+        const easyContainer = document.getElementById('easyContainer')
+        const normalContainer = document.getElementById('normalContainer')
+        const hardContainer = document.getElementById('hardContainer')
+        const backBtn = document.getElementById('backBtnContainer')
+
+        function easy() {
+            difficultyContainer.style.display = "none"
+            backBtn.style.visibility = "hidden"
+
+            easyContainer.style.display = "flex"
+            normalContainer.style.display = "none"
+            hardContainer.style.display = "none"
+        }
+        function normal() {
+            difficultyContainer.style.display = "none"
+            backBtn.style.visibility = "hidden"
+
+            easyContainer.style.display = "none"
+            normalContainer.style.display = "flex"
+            hardContainer.style.display = "none"
+        }
+        function hard() {
+            difficultyContainer.style.display = "none"
+            backBtn.style.visibility = "hidden"
+
+            easyContainer.style.display = "none"
+            normalContainer.style.display = "none"
+            hardContainer.style.display = "flex"
+        }
+
+        function showMech() {
+            
+            document.getElementById("difficultyContainer").style.display = "none"
+
+            document.getElementById("gameMech").style.display = "block"
+        }
+        function hideMech() {
+            
+            document.getElementById("difficultyContainer").style.display = "grid"
+
+            document.getElementById("gameMech").style.display = "none"
+        }
+    </script>
+</body>
+</html>

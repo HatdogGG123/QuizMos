@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="MonsterHunterQuest.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <title>Monster Hunter's Quest</title>
+</head>
+<body>
+    <style>
+        @media screen and (max-width: 425px) {
+            .container .main-game-container .fighting-character-container .character-sprite-image {
+                transform: scale(1) translateY(-40px);
+            }
+
+            @keyframes moveToEnemy {
+                0% {
+                    transform: scale(1) translateY(-40px) translateX(0);
+                }
+                50% {
+                    transform: scale(1) translateY(-40px) translateX(50%);
+                }
+                100% {
+                    transform: scale(1) translateY(-40px) translateX(0);
+                }
+            }
+            
+            .container .main-game-container .fighting-character-container .enemy-sprite-image {
+                transform: scale(1) translateY(-40px);
+            }
+            
+            @keyframes moveToChar {
+                0% {
+                    transform: scale(1) translateY(-40px) translateX(0);
+                }
+                50% {
+                    transform: scale(1) translateY(-40px) translateX(-130%);
+                }
+                100% {
+                    transform: scale(1) translateY(-40px) translateX(0);
+                }
+            }
+        }
+    </style>
+
+    <img class="bgImg" src="Group 297.png" alt="">
+    <div class="container">
+        <!-- HEADER (BACK, MECHANICS, LEADERBOARD BUTTON) -->
+        <div class="header" id="header-con"  >
+            <button onclick="goHome()">
+                <img src="back-arrow.png" alt="">
+            </button>
+            <button onclick="showMech()">
+                <img src="question-sign.png" alt="">
+            </button>
+            <button onclick="goLB()">
+                <img src="ranking.png" alt="">
+            </button>
+        </div>
+        
+        <!-- GAME MECHANICS CONTAINER -->
+        <div class="gameMechCon" id="gameMechCon" style="display: none;">
+            <div class="closeMechBtn">
+                <button onclick="hideMech()"><img src="close.png" alt=""></button>
+            </div>
+            <div class="rules">
+                To begin the game, you must pick first your character and then click the start button to start the game. You will have a random monster opponent that you need to defeat to win the game. If your answer is wrong your enemy will attack you and your HP bar will decrease but if your answer is correct, your character will attack the enemy. The questions are arranged randomly. The game will end if you or your enemy is defeated.  
+            </div>
+        </div>
+
+        <!-- CHARACTER CONTAINER -->
+        <div class="character-container" id="character-con">
+            <div class="sprite-character-wrapper">
+                <p id="char-name" class="char-name">Choose your character</p>
+                <img id="sprite-img" class="sprite-char" src="">
+            </div>
+        </div>
+
+        <!-- CHARACTER CHOICE CONTAINER -->
+        <div class="character-choice-container" id="character-choice-con">    
+            <div class="char-choice" id="char-choice">
+                <button onclick="char1()">
+                    <img src="sprite_char - idle 2.png" alt="">
+                </button>
+                <button onclick="char2()">
+                    <img src="sprite_char - idle 3.png" alt="">
+                </button>
+                <button onclick="char3()">
+                    <img src="sprite_char - idle 4.png" alt="">
+                </button>
+                <button onclick="char4()">
+                    <img src="sprite_char - idle 5.png" alt="">
+                </button>
+                <button onclick="char5()">
+                    <img src="sprite_char - idle 1.png" alt="">
+                </button>
+            </div>
+
+            <div class="start-btn" id="start-btn-con" style="visibility: hidden;">
+                <button onclick="gameStart()">START</button>
+            </div>
+        </div>
+        
+        <div class="main-game-container" id="main-game-con" style="display: none;">
+            <!-- HP CONTAINER -->
+            <div class="HP-con">
+                <!-- CHARACTER HP -->
+                <div class="char-hp-con">
+                    <div class="char-pic">
+                        <img id="selected-char-avatar" src="" alt="">
+                    </div>
+                    <div class="char-info">
+                        <div id="char-hp-bar" class="hp-bar"></div>
+                    </div>
+                </div>
+
+                <!-- ENEMY HP -->
+                <div class="enemy-hp-con">
+                    <div class="enemy-pic">
+                        <img id="enemy-avatar" src="" alt="">
+                    </div>
+                    <div class="enemy-info">
+                        <div id="enemy-hp-bar" class="hp-bar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fighting-character-container">
+                <div class="character-sprite-image" id="character-sprite-image-con">
+                    <img id="selected-char-sprite" src="" class="">
+                </div>
+                <div class="enemy-sprite-image" id="enemy-sprite-image">
+                    <img id="enemy-sprite-img" src="" class="">
+                </div>
+            </div>
+
+            <div class="queAndAns-con">
+                <div class="question-con" id="question-con">Question appears here</div>
+                <div class="choice-con">
+                    <button class="letterChoice" id="a">choice 1</button>
+                    <button class="letterChoice" id="b">choice 2</button>
+                    <button class="letterChoice" id="c">choice 3</button>
+                    <button class="letterChoice" id="d">choice 4</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="result-con" id="result-con" style="display: none;">
+            <p class="gameResult" id="gameResult"></p>
+            <p>Correct answers: <span id="correct-answer"></span></p>
+            <p>Wrong answers: <span id="wrong-answer"></span></p>
+
+            <button onclick="exitGame()" name="submit">Exit Game</button>
+        </div>
+    </div>
+    
+    <script>
+        function exitGame() {
+            showForm()
+            window.location.href = "homepage.php"
+        }
+
+        function goHome() {
+            window.location.href = "homepage.php"
+        }
+
+        function goLB() {
+            window.location.href = "leaderboard.php"
+        }
+    </script>
+
+    <script src="MonsterHunterQuest.js"></script>
+</body>
+</html>

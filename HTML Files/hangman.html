@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hangman.css">
+    <title>Hangman</title>
+</head>
+<body>
+
+    <style>
+        iframe {
+            visibility: hidden;
+            position: absolute;
+        }
+
+        @media screen and (max-width: 430px) {
+            .container .notepadContainer .notepad .difficulty {
+                gap: 10px;
+            }
+            .container .notepadContainer .notepad .difficulty button {
+                font-size: 20px;
+                padding: 5px 15px;
+                border-radius: 5px;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <div class="backBtn">
+            <a href="homepage.php">
+                <button>
+                    <img src="back-arrow.png" alt="">
+                </button>
+            </a>
+        </div>
+
+        <iframe width="841" height="473" src="https://www.youtube.com/embed/GNDWNW3IKwU?autoplay=1&loop=1" title="Cute Background Music No Copyright / Funny Background Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+        <div class="notepadContainer">
+            <div class="notepad">
+                <div class="hole">
+                    <div class="hole1"></div>
+                    <div class="hole2"></div>
+                </div>
+                <div class="metal">
+                    <div class="metal1"></div>
+                    <div class="metal2"></div>
+                </div>
+                <div class="shine">
+                    <div class="shine1"></div>
+                    <div class="shine2"></div>
+                </div>
+
+                <div class="difficulty" id="difficulty">
+                        <button onclick="goToHangmanWeek1()">Week 1</button>
+                        <button onclick="goToHangmanWeek2()">Week 2</button>
+                        <button onclick="goToHangmanWeek3()">Week 3</button>
+                        <button onclick="goToHangmanWeek4()">Week 4</button>
+                        <button onclick="goToHangmanWeek5()">Week 5</button>
+                        <button onclick="goToHangmanWeek6()">Week 6</button>
+                        <button onclick="goToHangmanWeek7()">Week 7</button>
+                        <div class="howToPlayBtn" id="howToPlayBtn">
+                            <button onclick="showMech()">How to play?</button>
+                        </div>
+                </div>
+                <div class="gameMechanics" id="gameMechanics" style="display: none;">
+                    <div class="header">Game Mechanics</div>
+                    <p>Press each letter that will fill in the blanks to complete the answer to the question. You will have chances to get the correct answer if the chances rans out you lose.</p>
+                    <button onclick="hideMech()">Back to modes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showMech(){
+            document.getElementById("difficulty").style.display = "none"
+            document.getElementById("gameMechanics").style.display = "block"
+        }
+        function hideMech(){
+            document.getElementById("difficulty").style.display = "flex"
+            document.getElementById("howToPlayBtn").style.display = "block"
+
+            document.getElementById("gameMechanics").style.display = "none"
+        }
+
+        function goToHangmanWeek1() {
+            window.location.href = "hangmanWeekOne.php"
+        }
+        function goToHangmanWeek2() {
+            window.location.href = "hangmanWeekTwo.php"
+        }
+        function goToHangmanWeek3() {
+            window.location.href = "hangmanWeekThree.php"
+        }
+        function goToHangmanWeek4() {
+            window.location.href = "hangmanWeekFour.php"
+        }
+        function goToHangmanWeek5() {
+            window.location.href = "hangmanWeekFive.php"
+        }
+        function goToHangmanWeek6() {
+            window.location.href = "hangmanWeekSix.php"
+        }
+        function goToHangmanWeek7() {
+            window.location.href = "hangmanWeekSeven.php"
+        }
+    </script>
+</body>
+</html>

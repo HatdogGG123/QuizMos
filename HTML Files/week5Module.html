@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="icon" href="Logo.png">
+    <link rel="stylesheet" href="module.css">
+    <title>Week 5 Module: Introduction to PHP</title>
+
+    <style>
+        #lBtn:disabled, #rBtn:disabled {
+            opacity: 50%;
+        }
+
+        #lBtn:disabled:active, #rBtn:disabled:active {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="buttonContainer">
+            <button onclick="goToHome()"> 
+                <img src="back-arrow.png" alt="">
+                <p>Back to Homepage</p>
+            </button>
+            <button onclick="showView()">
+                <img src="document.png" alt="">
+                <p>File links</p>
+            </button>
+        </div>
+
+        <div class="view" id="view">
+            <button class="closeBtn" onclick="hideView()">
+                <img src="close.png">
+            </button>
+            <a href="https://drive.google.com/file/d/1oCH8TeQXm9oX0Ph2C8Sk_Y3R2opt55QM/view?usp=sharing" style="text-decoration: none;">
+                <button class="optionBtn">
+                    <img src="pdf.png" alt="">
+                    <p>PDF File</p>
+                </button>
+            </a>
+            <a href="https://docs.google.com/file/d/1mgxDKOjZUa3Vi7TGy3K2q6u9AForcGBx/edit?usp=docslist_api&filetype=mspresentation" style="text-decoration: none;">
+                <button class="optionBtn">
+                    <img src="ppt.png" alt="">
+                    <p>PPT File</p>
+                </button>
+            </a>
+        </div>
+
+        <div class="mainContent">
+            <div class="powerPointView" id="powerPointView">
+                <div class="sidebar">
+                    <div class="slideBox">
+                        <p>1</p>
+                        <img src="week 5 - page 1.png" alt="" id="slide" onclick="sidebarChangeSlide1()">
+                    </div>
+                    <div class="slideBox">
+                        <p>2</p>
+                        <img src="week 5 - page 2.png" alt="" id="slide" onclick="sidebarChangeSlide2()">
+                    </div>
+                    <div class="slideBox">
+                        <p>3</p>
+                        <img src="week 5 - page 3.png" alt="" id="slide" onclick="sidebarChangeSlide3()">
+                    </div>
+                    <div class="slideBox">
+                        <p>4</p>
+                        <img src="week 5 - page 4.png" alt="" id="slide" onclick="sidebarChangeSlide4()">
+                    </div>
+                    <div class="slideBox">
+                        <p>5</p>
+                        <img src="week 5 - page 5.png" alt="" id="slide" onclick="sidebarChangeSlide5()">
+                    </div>
+                    <div class="slideBox">
+                        <p>6</p>
+                        <img src="week 5 - page 6.png" alt="" id="slide" onclick="sidebarChangeSlide6()">
+                    </div>
+                    <div class="slideBox">
+                        <p>7</p>
+                        <img src="week 5 - page 7.png" alt="" id="slide" onclick="sidebarChangeSlide7()">
+                    </div>
+                    <div class="slideBox">
+                        <p>8</p>
+                        <img src="week 5 - page 8.png" alt="" id="slide" onclick="sidebarChangeSlide8()">
+                    </div>
+                    <div class="slideBox">
+                        <p>9</p>
+                        <img src="week 5 - page 9.png" alt="" id="slide" onclick="sidebarChangeSlide9()">
+                    </div>
+                    <div class="slideBox">
+                        <p>10</p>
+                        <img src="week 5 - page 10.png" alt="" id="slide" onclick="sidebarChangeSlide10()">
+                    </div>
+                    <div class="slideBox">
+                        <p>11</p>
+                        <img src="week 5 - page 11.png" alt="" id="slide" onclick="sidebarChangeSlide11()">
+                    </div>
+                </div>
+                <div class="pptMainContent">
+                    <div class="slideContainer">
+                        <img src="week 5 - page 1.png" id="slideImg">
+                    </div>
+                    <div class="navigation">
+                        <button id="lBtn" onclick="prevSlide()">
+                            <img src="left.png" alt="">
+                        </button>
+                        <button>
+                            slide <span id="slideCount">1</span>
+                        </button>
+                        <button id="rBtn" onclick="nextSlide()">
+                            <img src="right.png" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const TOC = document.getElementById('tableOfContent')
+        const viewAs = document.getElementById('view')
+
+        //Function to show Table of Contents
+        function showTOC() {
+            TOC.style.display = "flex"
+            TOC.classList.add('showTocAnimation')
+        }
+
+        //Function to hide Table of Contents
+        function hideTOC() {
+            TOC.classList.remove('showTocAnimation')
+            TOC.style.display = "none"
+        }
+
+        //Function to show view as options
+        function showView() {
+            viewAs.style.display = "flex"
+            viewAs.classList.add('showViewAnimation')
+        }
+
+        //Function to hide view as options
+        function hideView() {
+            viewAs.classList.remove('showViewAnimation')
+            viewAs.style.display = "none"
+        }
+
+        //Function to redirect to homepage
+        function goToHome() {
+            window.location.href = "homepage.php"
+        }
+
+        //Script for changing slides
+        const image = document.getElementById('slideImg')
+        const displaySlideCounter = document.getElementById('slideCount')
+
+        let currentSlide = 1
+
+        function changeSlide() {
+            switch(currentSlide) {
+                case 0:
+                    image.src = "week 5 - page 1.png"
+                    currentSlide = 2
+                break;
+                case 1:
+                    image.src = "week 5 - page 1.png"
+                    displaySlideCounter.innerHTML = currentSlide
+
+                    document.getElementById("lBtn").disabled = true
+                break;
+                case 2:
+                    image.src = "week 5 - page 2.png"
+                    displaySlideCounter.innerHTML = currentSlide
+
+                    document.getElementById("lBtn").disabled = false
+                break;
+                case 3:
+                    image.src = "week 5 - page 3.png"
+                    displaySlideCounter.innerHTML = currentSlide
+
+                    document.getElementById("rBtn").disabled = false
+                    document.getElementById("lBtn").disabled = false
+                break;
+                case 4:
+                    image.src = "week 5 - page 4.png"
+                    displaySlideCounter.innerHTML = currentSlide
+
+                    document.getElementById("rBtn").disabled = false
+                    document.getElementById("lBtn").disabled = false
+                break;
+                case 5:
+                    image.src = "week 5 - page 5.png"
+                    displaySlideCounter.innerHTML = currentSlide
+
+                    document.getElementById("rBtn").disabled = false
+                    document.getElementById("lBtn").disabled = false
+                break;
+                case 6:
+                    image.src = "week 5 - page 6.png"
+                    displaySlideCounter.innerHTML = currentSlide
+
+                    document.getElementById("rBtn").disabled = false
+                    document.getElementById("lBtn").disabled = false
+                break;
+                case 7:
+                    image.src = "week 5 - page 7.png"
+                    displaySlideCounter.innerHTML = currentSlide
+
+                    document.getElementById("rBtn").disabled = false
+                    document.getElementById("lBtn").disabled = false
+                break;
+                case 8:
+                    image.src = "week 5 - page 8.png"
+                    displaySlideCounter.innerHTML = currentSlide
+
+                    document.getElementById("rBtn").disabled = false
+                    document.getElementById("lBtn").disabled = false
+                break;
+                case 9:
+                    image.src = "week 5 - page 9.png"
+                    displaySlideCounter.innerHTML = currentSlide
+
+                    document.getElementById("rBtn").disabled = false
+                    document.getElementById("lBtn").disabled = false
+                break;
+                case 10:
+                    image.src = "week 5 - page 10.png"
+                    displaySlideCounter.innerHTML = currentSlide
+
+                    document.getElementById("rBtn").disabled = false
+                break;
+                case 11:
+                    image.src = "week 5 - page 11.png"
+                    displaySlideCounter.innerHTML = currentSlide
+
+                    document.getElementById("rBtn").disabled = true
+                break;
+            }
+        }
+
+        function sidebarChangeSlide1() {
+            currentSlide = 1
+            changeSlide()
+        }
+        function sidebarChangeSlide2() {
+            currentSlide = 2
+            changeSlide()
+        }
+        function sidebarChangeSlide3() {
+            currentSlide = 3
+            changeSlide()
+        }
+        function sidebarChangeSlide4() {
+            currentSlide = 4
+            changeSlide()
+        }
+        function sidebarChangeSlide5() {
+            currentSlide = 5
+            changeSlide()
+        }
+        function sidebarChangeSlide6() {
+            currentSlide = 6
+            changeSlide()
+        }
+        function sidebarChangeSlide7() {
+            currentSlide = 7
+            changeSlide()
+        }
+        function sidebarChangeSlide8() {
+            currentSlide = 8
+            changeSlide()
+        }
+        function sidebarChangeSlide9() {
+            currentSlide = 9
+            changeSlide()
+        }
+        function sidebarChangeSlide10() {
+            currentSlide = 10
+            changeSlide()
+        }
+        function sidebarChangeSlide11() {
+            currentSlide = 11
+            changeSlide()
+        }
+        
+
+        function nextSlide() {
+            currentSlide++
+            console.log(currentSlide)
+            changeSlide()
+        }
+        function prevSlide() {
+            currentSlide--
+            console.log(currentSlide)
+            changeSlide()
+        }
+
+        //Script to show or hide ppt view
+        const pptView = document.getElementById('powerPointView')
+        const modulleView = document.getElementById('moduleView')
+        
+        function showPPT() {
+            pptView.style.display = "flex"
+            modulleView.style.display = "none"
+        }
+        function showModule() {
+            pptView.style.display = "none"
+            modulleView.style.display = "block"
+        }
+    </script>
+</body>
+</html>

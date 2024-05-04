@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <title>QuizMos Landing Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: black;
+            box-sizing: border-box;
+            font-family: 'Patrick Hand';
+        }
+
+        .container {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: #FFFAEC;
+            padding: 20px;
+            overflow-y: scroll;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .container .sectionOne {
+            width: 100%;
+            height: fit-content;
+            padding: 20px;
+            background-color: white;
+            border: 3px solid black;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+        .container .sectionOne img {
+            height: 300px;
+            margin-top: -100px;
+        }
+        .container .sectionOne p {
+            width: 80%;
+            text-align: center;
+            font-size: 30px;
+            margin-top: -100px;
+        }
+
+        .container .sectionTwo {
+            background-color: white;
+            width: 100%;
+            height: fit-content;
+            padding: 20px;
+            border: 3px solid black;
+            border-radius: 10px;
+            position: relative;
+        }
+        .container .sectionTwo p:nth-child(1) {
+            font-size: 50px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .container .sectionTwo p:nth-child(2) {
+            font-size: 25px;
+            margin-bottom: 20px;
+            width: 70%;
+            margin: 0 auto;
+        }
+        .container .sectionTwo img {
+            position: absolute;
+            height: 400px;
+        }
+        .container .sectionTwo .img1 {
+            left: -100px;
+            bottom: 0px;
+        }
+        .container .sectionTwo .img2 {
+            right: 0;
+            bottom: 0;
+        }
+
+        .container .sectionThree {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        .container .sectionThree .card {
+            text-align: center;
+            width: 400px;
+            height: 300px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            border: 3px solid black;
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .container .sectionThree .card img {
+            aspect-ratio: 1;
+            width: 60%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid black;
+            margin-top: -130px;
+        }
+        .container .sectionThree .card .p1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .container .sectionThree .card .p2 {
+            font-size: 25px;
+        }
+
+        .container .nextBtn {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container .nextBtn button {
+            width: 80%;
+            height: fit-content;
+            padding: 20px;
+            font-size: 45px;
+            cursor: pointer;
+            background-color: white;
+            border: 3px solid black;
+            border-radius: 10px;
+            margin-bottom: 100px;
+        }
+        .container .nextBtn button:active {
+            transform: scale(0.95);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .container .sectionOne img {
+                height: 250px;
+                margin-top: -100px;
+            }
+            .container .sectionOne p {
+                font-size: 28px;
+            }
+            
+            .container .sectionTwo p:nth-child(2) {
+                width: 65%;
+            }
+            
+            .container .sectionThree .card .p1 {
+                font-size: 30px;
+            }
+            .container .sectionThree .card .p2 {
+                font-size: 20px;
+            }
+
+            .container .sectionThree .card {
+                width: 250px;
+            }
+
+            .container .sectionThree .card img {
+                width: 80%;
+                margin-top: -100px;
+            }
+
+            .container .nextBtn button {
+                width: 80%;
+                font-size: 40px;
+            }
+            
+        }
+
+        @media screen and (max-width: 768px) {
+            .container .sectionTwo img {
+                position: absolute;
+                height: 300px;
+            }
+            .container .sectionTwo .img1 {
+                left: -80px;
+                bottom: 0px;
+            }
+
+            footer {
+                font-size: 25px;
+            }
+        }
+
+        @media screen and (max-width: 430px) {
+            .container .sectionOne img {
+                height: 200px;
+                margin-top: -50px;
+            }
+            .container .sectionOne p {
+                width: 90%;
+                text-align: center;
+                font-size: 20px;
+                margin-top: -70px;
+            }
+
+            .container .sectionTwo p:nth-child(1) {
+                font-size: 35px;
+            }
+            .container .sectionTwo p:nth-child(2) {
+                font-size: 20px;
+                width: 60%;
+            }
+
+            .container .sectionTwo img {
+                position: absolute;
+                height: 190px;
+            }
+            .container .sectionTwo .img1 {
+                left: -50px;
+                bottom: 0px;
+            }
+            .container .sectionTwo .img2 {
+                right: 0;
+                bottom: 0;
+            }
+
+            .container .nextBtn button {
+                width: 100%;
+                font-size: 25px;
+            }
+
+            footer {
+                font-size: 20px;
+            }
+        }
+
+        @media screen and (max-width: 375px) {
+            .container .sectionTwo img {
+                position: absolute;
+                height: 150px;
+            }
+            .container .sectionTwo .img1 {
+                left: -30px;
+                bottom: 0px;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            .container .sectionTwo img {
+                position: absolute;
+                height: 130px;
+            }
+            .container .sectionTwo .img1 {
+                left: -30px;
+                bottom: 0px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="sectionOne">
+            <img src="logoNoBg.png" alt="">
+            <p>Quizmos is a website provided for students who want to study lessons related to programming. It contains modules or learning materials that can be downloaded for offline access. Additionally, it offers different types of interactive quizzes such as Quiz io, Hangman, and Codemaster, where quiz takers can receive badges to help them practice their learning and knowledge from the provided materials.</p>
+        </div>
+        <div class="sectionTwo">
+            <p>How to use QuizMos?</p>
+            <p>
+                1. Click the GET STARTED button. <br> <br>
+                2. Create an account by clicking “SIGN UP HERE” link below, then input your USERNAME and PASSWORD, ensuring they match and are memorable. <br> <br>
+                3. Once done, it will return to its initial state before you SIGN IN. Use the same USERNAME and PASSWORD you entered during SIGN IN, then click the LOG IN button. <br> <br>
+                4. Now that you're logged into your account, you can access modules and games. <br> <br>
+                5. In the modules, click the FILE LINK to choose whether to download a pdf or ppt for having an offline saved files. <br> <br>
+                6. For the games, start by reading the game mechanics to understand how to play. After playing, input your username  and click the submit button or hit enter on you keyboard for us to track your scores. Don't worry, the more you try, the more you succeed. So feel free to repeat answering as many times as you need.You can also check your rank on the leaderboards feature of our website <br> <br>
+                7. When you're done using QuizMos, you can log out by clicking the LOGOUT BUTTON for those who use desktops, laptops or tablets at the bottom left of you screen and for those who use their cellphones you can click the LOGOUT ICON at the top right of your screen. <br> <br>
+            </p>
+            <img class="img2" src="questionStickman2.png" alt="">
+        </div>
+        <div class="sectionThree">
+            <div class="card">
+                <img src="meneses (1).png" alt="">
+                <p><span class="p1">Meneses, Samantha Venice, D.</span> <br><br><span class="p2"> Lead Researcher</span></p>
+            </div>
+            <div class="card">
+                <img src="vitusis.jpg" alt="">
+                <p><span class="p1">Vitusis, Jayzel</span> <br><br><span class="p2"> Assistant Leader</span></p>
+            </div>
+            <div class="card">
+                <img src="tolentino.jpg" style="filter: brightness(1.5);">
+                <p><span class="p1">Tolentino, Renzo</span> <br><br><span class="p2"> Website Developer</span></p>
+            </div>
+            <div class="card">
+                <img src="reyes.jpg" alt="">
+                <p><span class="p1">Reyes, Sam Lawrence</span> <br><br><span class="p2"> Group Member</span></p>
+            </div>
+            <div class="card">
+                <img src="vergara.jpg" alt="">
+                <p><span class="p1">Vergara, Rani Lance</span> <br><br><span class="p2"> Group Member</span></p>
+            </div>
+        </div>
+
+        <div class="nextBtn">
+            <button onclick="goToQuizmos()">Go to QuizMos</button>
+        </div>
+
+        <footer>
+            ©️ Copyright 4th Quarter Module - Web Development, from UC (PnC). All Rights Reserved. <br><br>
+            ©️ Copyright QuizMos. All Rights Reserved.
+        </footer>
+    </div>
+
+    <script>
+        function goToQuizmos() {
+            window.location.href = "indexTwo.html"
+        }
+    </script>
+</body>
+</html>

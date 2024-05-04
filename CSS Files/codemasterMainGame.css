@@ -1,0 +1,657 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Patrick Hand';
+}
+
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: #A67E52;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.container .table {
+    width: 100%;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container .table .upperTable {
+    height: 75px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+/*Design for back button container*/
+.container .backBtnContainer {
+    width: 100%;
+    visibility: hidden;
+}
+.container .backBtnContainer button {
+    margin: 20px;
+    border-radius: 50%;
+    border: 3px solid black;
+    padding: 10px;
+}
+.container .backBtnContainer button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.container .backBtnContainer button:active {
+    transform: scale(0.95);
+}
+.container .backBtnContainer button img {
+    height: 30px;
+}
+
+/*Design for timer*/
+.container .table .upperTable .timer {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    align-items: center;
+}
+.container .table .upperTable .timer .timerButton {
+    width: 100px;
+    height: 10px;
+    border-radius: 10px 10px 0 0;
+    background-color: #5C2300;
+}
+.container .table .upperTable .timer .timerText {
+    background-color: white;
+    width: 40%;
+    font-size: 25px;
+    text-align: center;
+    border: 10px solid #253A3E;
+    border-radius: 10px;
+}
+.container .table .upperTable .timer .timerStand {
+    width: 38%;
+    height: 10px;
+    background-color: #253A3E;
+}
+
+/*Design for the book*/
+.container .table .upperTable .book {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    justify-content: end;
+}
+.container .table .upperTable .book .book1 {
+    margin-left: 30px;
+    width: 20%;
+    height: 20px;
+    background-color: #D3C117;
+    border-radius: 5px 5px 0 0;
+}
+.container .table .upperTable .book .book2 {
+    margin-left: 15px;
+    width: 35%;
+    height: 20px;
+    background-color: #41242A;
+    border-radius: 5px 5px 0 0;
+}
+.container .table .upperTable .book .book3 {
+    width: 45%;
+    height: 20px;
+    background-color: #A34946;
+    border-radius: 5px 5px 0 0;
+}
+
+/*Design for middle table*/
+.container .table .middleTable {
+    width: 50%;
+    height: 20px;
+    background-color: #4E514F;
+    border-radius: 5px;
+}
+
+/*Design for lower table*/
+.container .table .lowerTable {
+    width: 50%;
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+    margin-right: 50px;
+    margin-top: -10px;
+}
+.container .table .lowerTable #wrongCount {
+    background-color: #E27F70;
+    font-size: 50px;
+    padding: 10px 20px;
+    transform: rotate(10deg);
+}
+.container .table .lowerTable #correctCount {
+    background-color: #9BB79B;
+    font-size: 50px;
+    padding: 10px 20px;
+}
+
+/*Design for computer*/
+.container .computer {
+    margin-top: 30px;
+    height: 670px;
+    text-align: center;
+    width: 50%;
+}
+.container .computer .computer-head {
+    height: 500px;
+    text-align: center;
+    width: 100%;
+    height: 70%;
+    background-color: #DDDCCC;
+    border: 10px solid black;
+    border-radius: 15px;
+}
+
+/*Design for main content*/
+.container .computer .computer-head .mainContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Design for item counter */
+.container .computer .computer-head .mainContent .itemCounter {
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    width: 95%;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.container .computer .computer-head .mainContent .itemCounter .diffText {
+    font-size: 25px;
+    padding: 5px 25px;
+    border-radius: 100px;
+    color: white;
+    border: 3px solid black;
+}
+.container .computer .computer-head .mainContent .itemCounter .diffText-easy {
+    background-color: #548B7E;
+}
+.container .computer .computer-head .mainContent .itemCounter .diffText-normal {
+    background-color: #C97D5D;
+}
+.container .computer .computer-head .mainContent .itemCounter .diffText-hard {
+    background-color: #AD4848;
+}
+#item1, #item2, #item3, #item4 {
+    border: 3px solid #548B7E;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}
+#item5, #item6, #item7 {
+    border: 3px solid #C97D5D;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}
+#item8, #item9, #item10 {
+    border: 3px solid #AD4848;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}
+/*Design for quiz box*/
+.container .computer .computer-head .mainContent .quizBox {
+    width: 95%;
+    border: 3px solid black;
+    border-radius: 10px;
+    height: 65%;
+    text-align: left;
+}
+.container .computer .computer-head .mainContent .quizBox .question {
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    text-align: left;
+}
+.container .computer .computer-head .mainContent .quizBox .question pre {
+    font-size: large;
+}
+
+/*Design for result container*/
+.container .computer .computer-head .mainContent .quizBox .resultContainer {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+}
+.container .computer .computer-head .mainContent .quizBox .resultContainer .congratsText {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.container .computer .computer-head .mainContent .quizBox .resultContainer #scoreText {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.container .computer .computer-head .mainContent .quizBox .resultContainer .medalContainer img {
+    height: 200px;
+}
+
+/*Design for form container*/
+.container .computer .computer-head .mainContent .quizBox .formContainer {
+    width: 100%;
+    height: 100%;
+}
+.container .computer .computer-head .mainContent .quizBox .formContainer form {
+    width: 95%;
+    height: 90%;
+    padding: 20px;
+    flex-wrap: wrap;    
+}
+.container .computer .computer-head .mainContent .quizBox .formContainer form input {
+    width: 42.7%;
+    padding: 10px;
+    margin-bottom: 25px;
+    margin-left: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+.container .computer .computer-head .mainContent .quizBox .formContainer form input:nth-child(5){
+    width: 92%;
+}
+.container .computer .computer-head .mainContent .quizBox .formContainer form .submitFormBtn {
+    width: 95%;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+.container .computer .computer-head .mainContent .quizBox .formContainer form .submitFormBtn:active {
+    transform: scale(0.95);
+}
+
+/*Design for answer box*/
+.container .computer .computer-head .mainContent .answerBox {
+    height: 15%;
+    width: 95%;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+/*Design for user answer box*/
+.container .computer .computer-head .mainContent .answerBox .userAnswerBox {
+    width: 70%;
+    border-radius: 10px;
+    border: 3px solid black;
+}
+.container .computer .computer-head .mainContent .answerBox .userAnswerBox input {
+    height: 100%;
+    width: 95%;
+    background-color: #5c230000;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+
+/*Design for submit button*/
+.container .computer .computer-head .mainContent .answerBox .submitBtnContainer {
+    width: 15%;
+}
+.container .computer .computer-head .mainContent .answerBox .submitBtnContainer button {
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    background-color: #D9D9D9;
+    color: black;
+    border-radius: 10px;
+    border: 3px solid black;
+    cursor: pointer;
+}
+.container .computer .computer-head .mainContent .answerBox .submitBtnContainer button:active {
+    transform: scale(0.95);
+}
+.container .computer .computer-head .mainContent .answerBox .submitBtnContainer button:disabled {
+    color: gray;
+}
+
+/*Design for next button*/
+.container .computer .computer-head .mainContent .answerBox .nextBtnContainer {
+    width: 15%;
+    border-radius: 0 5px 5px 0;
+}
+.container .computer .computer-head .mainContent .answerBox .nextBtnContainer button {
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    background-color: #D9D9D9;
+    color: black;
+    border-radius: 10px;
+    border: 3px solid black;
+    cursor: pointer;
+}
+.container .computer .computer-head .mainContent .answerBox .nextBtnContainer button:disabled {
+    color: gray;
+}
+.container .computer .computer-head .mainContent .answerBox .nextBtnContainer button:active {
+    transform: scale(0.95);
+}
+
+/*Design for show form button*/
+.container .computer .computer-head .mainContent .answerBox .showFormBtnContainer {
+    height: 100%;
+    width: 100%;
+    background-color: lightblue;
+}
+.container .computer .computer-head .mainContent .answerBox .showFormBtnContainer button {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+}
+.container .computer .computer-head .mainContent .answerBox .showFormBtnContainer button:active {
+    transform: scale(0.95);
+}
+
+/*Design for neck*/
+.container .computer .computer-neck {
+    height: 7%;
+    width: 20%;
+    background-color: black;
+    border-radius: 0 0 10px 10px;
+    margin: 0 auto;
+}
+
+/*Design for stand*/
+.container .computer .computer-stand {
+    height: 50px;
+    width: 40%;
+    background-color: black;
+    border-radius: 100px;
+    margin: -20px auto;
+}
+
+@media screen and (max-width: 768px) {
+
+    /*Design for upper table*/
+    .container .table {
+        padding: 0;
+    }
+    .container .table .upperTable {
+        width: 80%;
+    }
+    
+    /*Design for middle table*/
+    .container .table .middleTable {
+        width: 80%;
+    }
+
+    /*Design for lower table*/
+    .container .table .lowerTable {
+        width: 80%;
+    }
+    .container .table .lowerTable #wrongCount {
+        font-size: 35px;
+    }
+    .container .table .lowerTable #correctCount {
+        font-size: 35px;
+    }
+
+    .container .computer .computer-head {
+        height: 60%;
+    }
+    .container .computer {
+        width: 80%;
+    }
+
+    .container .computer .computer-head .mainContent .itemCounter .diffText {
+        font-size: 20px;
+        padding: 3px 25px;
+    }
+    #item1, #item2, #item3, #item4 {
+        border: 3px solid #548B7E;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+    }
+    #item5, #item6, #item7 {
+        border: 3px solid #C97D5D;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+    }
+    #item8, #item9, #item10 {
+        border: 3px solid #AD4848;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+    }
+
+    /*Design for neck*/
+    .container .computer .computer-neck {
+        width: 30%;
+    }
+    
+    /*Design for stand*/
+    .container .computer .computer-stand {
+        width: 55%;
+    }
+
+    /*Design for form container*/
+    .container .computer .computer-head .mainContent .quizBox .formContainer form input {
+        width: 40.5%;
+        margin-bottom: 15px;
+    }
+    .container .computer .computer-head .mainContent .quizBox .formContainer form input:nth-child(5){
+        width: 90%;
+    }
+    .container .computer .computer-head .mainContent .quizBox .formContainer form .submitFormBtn {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    /*Design for timer*/
+    .container .table .upperTable .timer .timerButton {
+        width: 70px;
+        height: 5px;
+        border-radius: 10px 10px 0 0;
+        background-color: #5C2300;
+    }
+    .container .table .upperTable .timer .timerText {
+        width: 50%;
+        font-size: 20px;
+        border: 5px solid #253A3E;
+    }
+    .container .table .upperTable .timer .timerStand {
+        width: 48%;
+        height: 5px;
+    }
+
+    /*Design for middle table*/
+    .container .table .middleTable {
+        height: 15px;
+    }
+
+    /*Design for the book*/
+    .container .table .upperTable .book .book1 {
+        margin-left: 20px;
+        width: 30%;
+        height: 10px;
+        background-color: #D3C117;
+        border-radius: 5px 5px 0 0;
+    }
+    .container .table .upperTable .book .book2 {
+        margin-left: 10px;
+        width: 55%;
+        height: 10px;
+    }
+    .container .table .upperTable .book .book3 {
+        width: 80%;
+        height: 10px;
+    }
+
+    /*Design for lower table*/
+    .container .table .lowerTable {
+        margin-top: -10px;
+    }
+    .container .table .lowerTable #wrongCount {
+        font-size: 20px;
+        padding: 15px 15px;
+    }
+    .container .table .lowerTable #correctCount {
+        font-size: 20px;
+        padding: 15px 15px;
+    }
+
+    /*Design for computer head*/
+    .container .computer {
+        margin-top: 10px;
+        width: 90%;
+    }
+    .container .computer .computer-head {
+        width: 95%;
+        height: 40%;
+        border: 5px solid black;
+        border-radius: 10px;
+    }
+
+    .container .computer .computer-head .mainContent .itemCounter .diffText {
+        font-size: 13px;
+        padding: 1px 15px;
+    }
+    #item1, #item2, #item3, #item4 {
+        border: 3px solid #548B7E;
+        height: 3px;
+        width: 3px;
+        border-radius: 50%;
+    }
+    #item5, #item6, #item7 {
+        border: 3px solid #C97D5D;
+        height: 3px;
+        width: 3px;
+        border-radius: 50%;
+    }
+    #item8, #item9, #item10 {
+        border: 3px solid #AD4848;
+        height: 3px;
+        width: 3px;
+        border-radius: 50%;
+    }
+
+    /*Design for neck*/
+    .container .computer .computer-neck {
+        width: 20%;
+    }
+    
+    /*Design for stand*/
+    .container .computer .computer-stand {
+        width: 55%;
+        height: 3%;
+    }
+
+    /*Design for quiz box*/
+    .container .computer .computer-head .mainContent .quizBox {
+        border-radius: 5px;
+        border: 2px solid black;
+    }
+    .container .computer .computer-head .mainContent .quizBox .question pre{
+        width: 95%;
+        background-color: lightblue;
+        font-size: 15px;
+        flex-wrap: wrap;
+    }
+
+    /*Design for user answer box*/
+    .container .computer .computer-head .mainContent .answerBox .userAnswerBox {
+        border-radius: 5px;
+        border: 2px solid black;
+    }
+    .container .computer .computer-head .mainContent .answerBox .userAnswerBox input {
+        font-size: 15px;
+    }
+
+    /*Design for submit button*/
+    .container .computer .computer-head .mainContent .answerBox .submitBtnContainer button {
+        font-size: 15px;
+        border-radius: 5px;
+        border: 2px solid black;
+    }
+    /*Design for next button*/
+    .container .computer .computer-head .mainContent .answerBox .nextBtnContainer button {
+        font-size: 15px;
+        border-radius: 5px;
+        border: 2px solid black;
+    }
+    
+    /*Design for show form button*/
+    .container .computer .computer-head .mainContent .answerBox .showFormBtnContainer button {
+        border: 2px solid black;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+    .container .computer .computer-head .mainContent .answerBox .showFormBtnContainer button:active {
+        transform: scale(0.95);
+    }
+
+    /*Design for form container*/
+    .container .computer .computer-head .mainContent .quizBox .formContainer form {
+        padding: 10px;
+    }
+    .container .computer .computer-head .mainContent .quizBox .formContainer form input {
+        width: 20%;
+        padding: 10px;
+        margin-bottom: 15px;
+        margin-left: 10px;
+        font-size: 15px;
+        border-radius: 10px;
+        background-color: transparent;
+    }
+    .container .computer .computer-head .mainContent .quizBox .formContainer form input:nth-child(4){
+        width: 36%;
+    }
+    .container .computer .computer-head .mainContent .quizBox .formContainer form input:nth-child(5){
+        width: 36%;
+    }
+    .container .computer .computer-head .mainContent .quizBox .formContainer form .submitFormBtn {
+        width: 91%;
+        background-color: white;
+        color: black;
+    }
+
+    /*Design for result container*/
+    .container .computer .computer-head .mainContent .quizBox .resultContainer {
+        padding: 5px;
+    }
+    .container .computer .computer-head .mainContent .quizBox .resultContainer .congratsText {
+        font-size: 30px;
+    }
+    .container .computer .computer-head .mainContent .quizBox .resultContainer #scoreText {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    .container .computer .computer-head .mainContent .quizBox .resultContainer .medalContainer img {
+        height: 100px;
+    }
+}

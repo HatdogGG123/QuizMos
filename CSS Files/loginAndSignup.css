@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Patrick Hand';
+
+}
+
+/*DESKTOP VERSION*/
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+/*Design for the Fill up container*/
+.container .fillUpFormContainer {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*Design for the logo*/
+.container .fillUpFormContainer .logo {
+    width: 100%;
+}
+.container .logo img {
+    height: 170px;
+    margin-left: 20px;
+    margin-top: -20px;
+}
+
+/*Design for form container*/
+.container .fillUpFormContainer .form {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 40%;
+    background-color: white;
+    box-shadow: 0 4px 10px 0 gray;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/*Design for the form*/
+.container .fillUpFormContainer .form form {
+    width: 100%;
+}
+
+/*Design for the welcome text*/
+.container .fillUpFormContainer .form form .welcomeText {
+    font-size: 60px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/*Design for the input field*/
+.container .fillUpFormContainer .form form input {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    border-radius: 10px;
+}
+.container .fillUpFormContainer .form form .submit {
+    background-color: #F7BB27;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 55%;
+}
+.container .fillUpFormContainer .form form .submit:active {
+    transform: scale(0.95);
+}
+
+/*Design for the image*/
+.container .image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+}
+.container .image img {
+    height: 75%;
+}
+
+/*TABLET VERSION*/
+@media screen and (max-width: 1000px) {
+    /*Design for the welcome text*/
+    .container .fillUpFormContainer .form form .welcomeText {
+        font-size: 40px;
+    }
+    /*Design for the image*/
+    .container .image img {
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /*Design for the logo*/
+    .container .logo img {
+        height: 130px;
+    }
+    /*Design for the form container*/
+    .container .fillUpFormContainer .form {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 40%;
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    /*Design for the welcome text*/
+    .container .fillUpFormContainer .form form .welcomeText {
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    /*Design for the input field*/
+    .container .fillUpFormContainer .form form input {
+        width: 80%;
+        font-size: small;
+    }
+    .container .fillUpFormContainer .form form .submit {
+        margin-top: 10px;
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    /*Design for the image*/
+    .container .image img {
+        height: 40%;
+    }
+}
+
+

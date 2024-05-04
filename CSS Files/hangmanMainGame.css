@@ -1,0 +1,525 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Patrick Hand', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Patrick Hand', cursive;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #3D5873;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+}
+
+.container .backBtn {
+    width: 100%;
+}
+.container .backBtn button {
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 3px solid black;
+}
+.container .backBtn button img {
+    height: 35px;
+}
+
+.container .notepadContainer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    text-align: center;
+}
+.container .notepadContainer .notepad {
+    height: 80%;
+    width: 30%;
+    background-color: #FDF6E4;
+    border: 20px solid #8C5D93;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container .notepadContainer .notepad .hole {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 20px;
+}
+.container .notepadContainer .notepad .hole .hole1,
+.container .notepadContainer .notepad .hole .hole2 {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(65, 65, 65);
+    border-radius: 50%;
+}
+.container .notepadContainer .notepad .metal {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin-top: -120px;
+}
+.container .notepadContainer .notepad .metal .metal1,
+.container .notepadContainer .notepad .metal .metal2 {
+    height: 100px;
+    width: 25px;
+    background-color: #728198;
+    border-radius: 100px;
+}
+.container .notepadContainer .notepad .shine {
+    display: flex;
+    width: 85%;
+    gap: 92%;
+    margin-top: -70px;
+    margin-bottom: 15%;
+    visibility: hidden;
+}
+.container .notepadContainer .notepad .shine .shine1,
+.container .notepadContainer .notepad .shine .shine2 {
+    height: 30px;
+    width: 10px;
+    background-color: #D9D9D9;
+    border-radius: 100px;
+}
+
+/*Design for the main content*/
+.container .notepadContainer .notepad .mainContent  {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Design for the start button*/
+.container .notepadContainer .notepad .mainContent .startBox {
+    width: 100%;
+    height: fit-content;
+}   
+.container .notepadContainer .notepad .mainContent .startBox button {
+    width: 60%;
+    padding: 10px;
+    border: 3px solid black;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 50px;
+}
+.container .notepadContainer .notepad .mainContent .startBox button:active {
+    transform: scale(0.95);
+}
+
+/*Design for the quiz box*/
+.container .notepadContainer .notepad .mainContent .quizBox {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    display: none;
+}
+.container .notepadContainer .notepad .mainContent .quizBox .itemContainer {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+#item1, #item2, #item3, #item4, #item5, #item6, #item7, #item8, #item9, #item10 {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+#item1, #item2, #item3, #item4 {
+    border: 2px solid #548B7E;
+}
+#item5, #item6, #item7 {
+    border: 2px solid #B97C7C;
+}
+#item8, #item9, #item10 {
+    border: 2px solid #AD4848;
+}
+.container .notepadContainer .notepad .mainContent .quizBox .itemContainer .diffText {
+    border-radius: 100px;
+    padding: 3px 20px;
+    color: white;
+    font-size: 20px;
+}
+.container .notepadContainer .notepad .mainContent .quizBox .itemContainer .diffText-easy {
+    background-color: #548B7E;
+}
+.container .notepadContainer .notepad .mainContent .quizBox .itemContainer .diffText-normal {
+    background-color: #B97C7C;
+}
+.container .notepadContainer .notepad .mainContent .quizBox .itemContainer .diffText-hard {
+    background-color: #AD4848;
+}
+.container .notepadContainer .notepad .mainContent .quizBox #questionContainer {
+    width: 95%;
+    max-height: 30%;
+    height: 30%;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.container .notepadContainer .notepad .mainContent .quizBox .hangmanImageContainer {
+    width: 100%;
+    height: 40%;
+}
+.container .notepadContainer .notepad .mainContent .quizBox .hangmanImageContainer .hangmanImage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.container .notepadContainer .notepad .mainContent .quizBox #word-container {
+    font-size: 25px;
+    width: 100%;
+}
+.container .notepadContainer .notepad .mainContent .quizBox #guessContainer {
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.container .notepadContainer .notepad .mainContent .quizBox #alphabet-container {
+    font-size: 25px;
+    margin-bottom: 10px;
+    width: 85%;
+    display: flex;
+    gap: 15px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.container .notepadContainer .notepad .mainContent .quizBox #alphabet-container button {
+    font-size: 25px;
+    cursor: pointer;
+    color: black;
+    background-color: #00000000;
+    border: none;
+}
+.container .notepadContainer .notepad .mainContent .quizBox #alphabet-container button:active {
+    transform: scale(0.95);
+}
+.container .notepadContainer .notepad .mainContent .quizBox #alphabet-container button:disabled {
+    color: gray;
+}
+
+/*Design for the result box 1*/
+.container .notepadContainer .notepad .mainContent .resultBox1 {
+    width: 70%;
+    height: 90%;
+    background-color: white;
+    border-radius: 10px;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    display: none;
+}
+.container .notepadContainer .notepad .mainContent .resultBox1 #text {
+    width: 95%;
+    font-size: 30px;
+} 
+.container .notepadContainer .notepad .mainContent .resultBox1 .image img {
+    height: 300px;
+}
+.container .notepadContainer .notepad .mainContent .resultBox1 .nextAndExitBtn {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+.container .notepadContainer .notepad .mainContent .resultBox1 .nextAndExitBtn button {
+    width: 50%;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 10px;
+    border: 3px solid black;
+    cursor: pointer;
+    color: white;
+}
+.container .notepadContainer .notepad .mainContent .resultBox1 .nextBtn {
+    background-color: #548B7E;
+}
+.container .notepadContainer .notepad .mainContent .resultBox1 .quitBtn {
+    background-color: #B97C7C;
+}
+.container .notepadContainer .notepad .mainContent .resultBox1 .nextAndExitBtn button:active {
+    transform:  scale(0.95);
+}
+
+/*Design for result box 2*/
+.container .notepadContainer .notepad .mainContent .resultBox2 {
+    height: 80%;
+    width: 70%;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+}
+.container .notepadContainer .notepad .mainContent .resultBox2 .congratsTxt {
+    font-size: 35px;
+}
+.container .notepadContainer .notepad .mainContent .resultBox2 .correctAndWrongBox {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+.container .notepadContainer .notepad .mainContent .resultBox2 .correctAndWrongBox img {
+    height: 70px;
+}
+.container .notepadContainer .notepad .mainContent .resultBox2 img {
+    height: 180px;
+}
+.container .notepadContainer .notepad .mainContent .resultBox2 .formBtn {
+    width: 100%;
+}
+.container .notepadContainer .notepad .mainContent .resultBox2 .formBtn button {
+    width: 80%;
+    font-size: 30px;
+    background-color: white;
+    border-radius: 10px;
+    border: 3px solid black;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+}
+.container .notepadContainer .notepad .mainContent .resultBox2 .formBtn button:active {
+    transform: scale(0.95);
+}
+
+/*Design for the fill up form*/
+.container .notepadContainer .notepad .mainContent .form {
+    background-color: white;
+    border: 3px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    display: none;
+}
+.container .notepadContainer .notepad .mainContent .form input {
+    width: 80%;
+    font-size: large;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 3px solid black;
+}
+
+@media screen and (max-width: 1024px) {
+    .container .notepadContainer .notepad {
+        width: 53%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container .backBtn button img {
+        height: 20px;
+    }
+    .container .notepadContainer .notepad {
+        width: 60%;
+    }
+
+    #item1, #item2, #item3, #item4, #item5, #item6, #item7, #item8, #item9, #item10 {
+        width: 8px;
+        height: 8px;
+    }
+    .container .notepadContainer .notepad .mainContent .quizBox .itemContainer .diffText {
+        border-radius: 100px;
+        padding: 3px 20px;
+        color: white;
+        font-size: 18px;
+    }
+    .container .notepadContainer .notepad .mainContent .quizBox .itemContainer .diffText-easy {
+        background-color: #548B7E;
+    }
+    .container .notepadContainer .notepad .mainContent .quizBox .itemContainer .diffText-normal {
+        background-color: #B97C7C;
+    }
+    .container .notepadContainer .notepad .mainContent .quizBox .itemContainer .diffText-hard {
+        background-color: #AD4848;
+    }
+    .container .notepadContainer .notepad .mainContent .quizBox #questionContainer {
+        width: 95%;
+        max-height: 30%;
+        height: 30%;
+        font-size: larger;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .container .notepadContainer .notepad {
+        width: 80%;
+    }
+
+    .container .notepadContainer .notepad .hole .hole1,
+    .container .notepadContainer .notepad .hole .hole2 {
+        height: 30px;
+        width: 30px;
+    }
+    .container .notepadContainer .notepad .metal {
+        margin-top: -90px;
+    }
+    .container .notepadContainer .notepad .metal .metal1,
+    .container .notepadContainer .notepad .metal .metal2 {
+        height: 80px;
+        width: 15px;
+    }
+    .container .notepadContainer .notepad .shine {
+        width: 85%;
+        gap: 93%;
+        margin-top: -60px;
+        margin-bottom: 20%;
+    }
+    .container .notepadContainer .notepad .shine .shine1,
+    .container .notepadContainer .notepad .shine .shine2 {
+        height: 35px;
+        width: 5px;
+        background-color: #D9D9D9;
+        border-radius: 100px;
+    }
+    .container .notepadContainer .notepad .mainContent .startBox button {
+        width: 80%;
+        font-size: 30px;
+    }
+
+    .container .notepadContainer .notepad .mainContent .resultBox1 {
+        height: 70%;
+    }
+    .container .notepadContainer .notepad .mainContent .resultBox1 #text {
+        font-size: 20px;
+    } 
+    .container .notepadContainer .notepad .mainContent .resultBox1 .image img {
+        height: 200px;
+    }
+    .container .notepadContainer .notepad .mainContent .resultBox1 .nextAndExitBtn button {
+        width: 50%;
+        padding: 10px 20px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    #item1, #item2, #item3, #item4, #item5, #item6, #item7, #item8, #item9, #item10 {
+        width: 5px;
+        height: 5px;
+    }
+    .container .notepadContainer .notepad .mainContent .quizBox .itemContainer .diffText {
+        border-radius: 100px;
+        padding: 3px 15px;
+        color: white;
+        font-size: 15px;
+    }
+    .container .notepadContainer .notepad .mainContent .quizBox .itemContainer {
+        transform: scale(0.95);
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .container .notepadContainer .notepad {
+        width: 80%;
+        border: 15px solid #8C5D93;
+        margin-top: 20px;
+    }
+
+    .container .notepadContainer .notepad .mainContent .quizBox .hangmanImageContainer .hangmanImage img {
+        height: 150px;
+    }
+
+    .container .notepadContainer .notepad .mainContent .quizBox #alphabet-container button {
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .container .notepadContainer .notepad .mainContent .quizBox #guessContainer {
+        font-size: 15px;
+    }
+
+    .container .notepadContainer .notepad .mainContent .resultBox2 {
+        width: 90%;
+    }
+    .container .notepadContainer .notepad .mainContent .resultBox2 .congratsTxt {
+        font-size: 25px;
+    }
+    .container .notepadContainer .notepad .mainContent .resultBox2 .correctAndWrongBox img {
+        height: 50px;
+    }
+    .container .notepadContainer .notepad .mainContent .resultBox2 img {
+        height: 150px;
+    }
+    .container .notepadContainer .notepad .mainContent .resultBox2 .formBtn {
+        width: 100%;
+    }
+    .container .notepadContainer .notepad .mainContent .resultBox2 .formBtn button {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .container .notepadContainer .notepad .mainContent .quizBox #questionContainer {
+        font-size: 20px;
+    }
+    .container .notepadContainer .notepad .mainContent .quizBox #alphabet-container button {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .container .notepadContainer .notepad .mainContent .quizBox #word-container {
+        font-size: 20px;
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .container .notepadContainer .notepad .mainContent .quizBox #guessContainer {
+        font-size: 20px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .container .notepadContainer .notepad .mainContent .quizBox .hangmanImageContainer .hangmanImage #line1 {
+        width: 200px;
+    }
+    .container .notepadContainer .notepad .mainContent .quizBox .hangmanImageContainer .hangmanImage #line3 {
+        width: 130px;
+    }
+
+    .container .notepadContainer .notepad .mainContent .resultBox1 {
+        width: 80%;
+    }
+}

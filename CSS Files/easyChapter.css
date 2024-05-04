@@ -1,0 +1,471 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Patrick Hand';
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: url('doodleBG.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*Design for rule container*/
+.container .startBtnContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.container .startBtnContainer .ruleBox {
+    width: 30%;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.container .startBtnContainer .ruleBox .header {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.container .startBtnContainer .ruleBox p {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.container .startBtnContainer .ruleBox .backAndStartBtnContainer {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+.container .startBtnContainer .ruleBox .backAndStartBtnContainer button {
+    width: 50%;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    border: 3px solid black;
+}
+.container .startBtnContainer .ruleBox .backAndStartBtnContainer button:active {
+    transform: scale(0.95);
+}
+
+/*Design for quiz container*/
+.container .quizContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+    display: none;
+}
+.container .quizContainer #timer {
+    font-size: 50px;
+}
+.container .quizContainer .counterContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.container .quizContainer .counterContainer .textCounter {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+}
+.container .quizContainer .counterContainer .itemCounterBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+}
+.container .quizContainer .counterContainer .itemCounterBox .diffText {
+    background-color: white;
+    padding: 3px 30px;
+    font-size: 20px;
+    border: 3px solid black;
+    border-radius: 100px;
+    color: white;
+}
+.container .quizContainer .counterContainer .itemCounterBox .diffText-easy {
+    background-color: #548B7E;
+}
+.container .quizContainer .counterContainer .itemCounterBox .diffText-ave {
+    background-color: #C97D5D;
+}
+.container .quizContainer .counterContainer .itemCounterBox .diffText-hard {
+    background-color: #AD4848;
+}
+.container .quizContainer .counterContainer .itemCounterBox #item1, #item2, #item3, #item4, #item5, #item6, #item7, #item8, #item9, #item10 {
+    background-color: white;
+    width: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+#item1, #item2, #item3, #item4 {
+    border: 3px solid #548B7E;
+}
+#item5, #item6, #item7 {
+    border: 3px solid #C97D5D;
+}
+#item8, #item9, #item10 {
+    border: 3px solid #AD4848;
+}
+.container .quizContainer #userAnswer{
+    width: 100%;
+    font-size: 30px;
+    margin-top: 10px;
+}
+.container .quizContainer .questionAndChoicesBox {
+    width: 35%;
+    height: 70%;
+    margin-top: 10px;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.container .quizContainer .questionAndChoicesBox #question {
+    height: 50%;
+    width: 100%;
+    font-size: 25px;
+}
+.container .quizContainer .questionAndChoicesBox .choice {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    margin-left: 10px;
+    height: 50%;
+}
+.container .quizContainer .questionAndChoicesBox .choice .choiceBox {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+    font-size: 25px;
+}
+.container .quizContainer .questionAndChoicesBox .choice .choiceBox button {
+    font-size: 20px;
+    background-color: #00000000;
+    border: none;
+    color: black;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+}
+.container .quizContainer .questionAndChoicesBox .choice .choiceBox button:disabled {
+    color: gray;
+}
+.container .quizContainer .questionAndChoicesBox .choice .choiceBox button:active {
+    transform: scale(0.95);
+}
+
+/*Design for next button container*/
+.container .nextButtonContainer {
+   display: none;
+}
+.container .nextButtonContainer button {
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.container .nextButtonContainer button:active {
+    transform: scale(0.95);
+}
+.container .nextButtonContainer button img {
+    height: 40px;
+}
+
+/*Design for result container*/
+.container .resultContainer {
+    height: fit-content;
+    width: 30%;
+    text-align: center;
+    justify-content: center;
+    align-items: start;
+    background-color: white;
+    border-radius: 10px;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    display: none;
+}
+.container .resultContainer .congratsText {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.container .resultContainer .percentText {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+.container .resultContainer #wrongImg img {
+    height: 250px;
+}
+.container .resultContainer .medalBox img {
+    height: 100px;
+}
+.container .resultContainer .rightAndWrongCounter {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.container .resultContainer .rightAndWrongCounter img {
+    height: 70px;
+}
+.container .resultContainer .rightAndWrongCounter p {
+    font-size: 30px;
+}
+
+/*Design for form box*/
+.container .formContainer {
+    width:30%;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+}
+.container .formContainer form {
+    width: 100%;
+}
+.container .formContainer form input {
+    width: 80%;
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/*Design for show form button container*/
+.container .showFormButtonContainer {
+    width: 100%;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: fit-content;
+    display: none;
+}
+.container .showFormButtonContainer button {
+    width: 30%;
+    font-size: 35px;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.container .showFormButtonContainer button:active {
+    transform: scale(0.95);
+}
+
+@media screen and (max-width: 768px) {
+    .container .startBtnContainer .ruleBox {
+        width: 60%;
+    }
+
+    /*Design for quiz Container*/
+    .container .quizContainer #timer {
+        font-size: 30px;
+    }
+    .container .quizContainer .counterContainer .textCounter {
+        width: 50%;
+        font-size: 20px;
+    }
+    .container .quizContainer .counterContainer .itemCounterBox {
+        display: flex;
+        gap: 10px;
+        width: fit-content;
+    }
+    .container .quizContainer .counterContainer .itemCounterBox .diffText {
+        background-color: white;
+        padding: 3px 20px;
+        font-size: 20px;
+        border: 3px solid black;
+        border-radius: 100px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container .quizContainer .counterContainer .itemCounterBox .diffText-easy {
+        background-color: #548B7E;
+    }
+    .container .quizContainer .counterContainer .itemCounterBox .diffText-ave {
+        background-color: #C97D5D;
+    }
+    .container .quizContainer .counterContainer .itemCounterBox .diffText-hard {
+        background-color: #AD4848;
+    }
+    .container .quizContainer .counterContainer .itemCounterBox #item1, #item2, #item3, #item4, #item5, #item6, #item7, #item8, #item9, #item10 {
+        background-color: white;
+        width: 8px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container .quizContainer .questionAndChoicesBox {
+        width: 65%;
+    }
+    .container .quizContainer .questionAndChoicesBox #question {
+        font-size: 20px;
+    }
+
+    /*Design for result container*/
+    .container .resultContainer {
+        width: 60%;
+    }
+    .container .resultContainer .congratsText {
+        font-size: 30px;
+    }
+    .container .resultContainer .percentText {
+        font-size: 25px;
+    }
+    .container .resultContainer .medalBox img {
+        height: 70px;
+    }
+
+    /*Design for show form button container*/
+    .container .showFormButtonContainer button {
+        width: 50%;
+    }
+
+    /*Design for form*/
+    .container .formContainer {
+        width:80%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    /*Design for rule container*/
+    .container .startBtnContainer .ruleBox {
+        width: 80%;
+        background-color: white;
+        border: 3px solid black;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .container .startBtnContainer .ruleBox .header {
+        font-size: 30px;
+    }
+    .container .startBtnContainer .ruleBox p {
+        font-size: 20px;
+    }
+    .container .startBtnContainer .ruleBox .backAndStartBtnContainer button {
+        font-size: 25px;
+    }
+
+    .container .quizContainer {
+        padding-top: 25px;
+    }
+
+    .container .startBtnContainer button { 
+        width: 50%;
+        font-size: 20px;
+    }
+
+    .container .quizContainer #timer {
+        font-size: 25px;
+    }
+    .container .quizContainer .counterContainer .textCounter {
+        width: 80%;
+        font-size: 20px;
+    }
+    .container .quizContainer .counterContainer .itemCounterBox {
+        display: flex;
+        gap: 10px;
+        width: fit-content;
+    }
+    .container .quizContainer .counterContainer .itemCounterBox .diffText {
+        background-color: white;
+        padding: 3px 10px;
+        font-size: 15px;
+        border: 3px solid black;
+        border-radius: 100px;
+        color: white;
+    }
+    .container .quizContainer .counterContainer .itemCounterBox .diffText-easy {
+        background-color: #548B7E;
+    }
+    .container .quizContainer .counterContainer .itemCounterBox .diffText-ave {
+        background-color: #C97D5D;
+    }
+    .container .quizContainer .counterContainer .itemCounterBox .diffText-hard {
+        background-color: #AD4848;
+    }
+    .container .quizContainer .counterContainer .itemCounterBox #item1, #item2, #item3, #item4, #item5, #item6, #item7, #item8, #item9, #item10 {
+        background-color: white;
+        width: 5px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+    }
+
+    .container .quizContainer .questionAndChoicesBox {
+        width: 85%;
+    }
+    .container .quizContainer .questionAndChoicesBox #question {
+        font-size: 20px;
+    }
+
+    /*Design for result container*/
+    .container .resultContainer {
+        width: 80%;
+    }
+    .container .resultContainer .congratsText {
+        font-size: 30px;
+    }
+    .container .resultContainer .percentText {
+        font-size: 25px;
+    }
+    .container .resultContainer .medalBox img {
+        height: 70px;
+    }
+    .container .resultContainer .rightAndWrongImg img {
+        height: 250px;
+    }
+    .container .resultContainer .rightAndWrongCounter img {
+        height: 30px;
+    }
+
+    /*Design for show form button container*/
+    .container .showFormButtonContainer button {
+        width: 80%;
+        font-size: 25px;
+    }
+}

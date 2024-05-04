@@ -1,0 +1,547 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-family: 'Patrick Hand';
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100dvh;
+}
+
+.container {
+    width: 95%;
+    height: 90%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Design for button container */
+.container .buttonContainer {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Design for buttons */
+.container .buttonContainer button {
+    width: 100%;
+    background-color: #F7BB27;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    justify-content: center;
+}
+.container .buttonContainer button:active {
+    transform: scale(0.95);
+    transition-duration: 0.3s;
+}
+
+/* Design for image inside button */
+.container .buttonContainer button img {
+    height: 25px;
+}
+
+/* Design for text inside button */
+.container .buttonContainer button p {
+    font-size: 30px;
+}
+
+/* Design for Table of Content List */
+.container .tableOfContent {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    gap: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 1;
+    top: 70px;
+    display: none;
+}
+
+/* Design for Table of Content Links/Text */
+.container .tableOfContent a {
+    text-decoration: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 25px;
+}
+.container .tableOfContent a:hover {
+    background-color: rgb(231, 231, 231);
+    transition-duration: 0.3s;
+}
+
+/* Design for close button for Table of Content */
+.container .tableOfContent .closeBtn {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    border: none;
+    background-color: transparent;
+}
+.container .tableOfContent .closeBtn img {
+    height: 20px;
+    cursor: pointer;
+}
+.container .tableOfContent .closeBtn img:active {
+    transform: scale(0.70);
+    transition-duration: 0.3s;
+}
+
+/* Animation to show Table of Contents */
+.showTocAnimation {
+    animation-name: showTOC;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+}
+
+@keyframes showTOC {
+    from {
+        transform: translateY(-300px);
+        visibility: hidden;
+    }
+    to {
+        transform: translateY(30px);
+    }
+}
+
+/* Animation to hide Table of Contents */
+.hideTocAnimation {
+    animation-name: hideTOC;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+}
+
+@keyframes hideTOC {
+    from {
+        transform: translateY(70px);
+    }
+    to {
+        transform: translateY(-300px);
+        visibility: hidden;
+    }
+}
+
+/* Design for "view as" options */
+.container .view {
+    display: flex;
+    flex-direction: column;
+    width: 32.5%;
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    gap: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 1;
+    top: 70px;
+    left: 67.5%;
+    display: none;
+}
+
+/* Design for close button */
+.container .view .closeBtn {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    border: none;
+    background-color: transparent;
+}
+.container .view .closeBtn img {
+    height: 20px;
+    cursor: pointer;
+}
+.container .view .closeBtn img:active {
+    transform: scale(0.70);
+    transition-duration: 0.3s;
+}
+
+/* Design for view as button list */
+.container .view .optionBtn {
+    text-decoration: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.container .view .optionBtn:hover {
+    background-color: rgb(231, 231, 231);
+    transition-duration: 0.3s;
+}
+
+/* Desing for the image inside the view as buttons */
+.container .view .optionBtn img {
+    height: 30px;
+}
+
+/* Animation to show Table of Contents */
+.showViewAnimation {
+    animation-name: showView;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+}
+
+@keyframes showView {
+    from {
+        transform: translateY(-300px);
+        visibility: hidden;
+    }
+    to {
+        transform: translateY(30px);
+    }
+}
+
+/* Animation to hide Table of Contents */
+.hideViewAnimation {
+    animation-name: hideView;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+}
+
+@keyframes hideView {
+    from {
+        transform: translateY(70px);
+    }
+    to {
+        transform: translateY(-300px);
+        visibility: hidden;
+    }
+}
+
+/* Design for main content */
+.container .mainContent {
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    overflow-y: scroll;
+    background-color: #F1EDE1;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Design for the main title */
+.container .mainContent .mainTitle {
+    font-size: 70px;
+    margin-bottom: 100px;
+}
+
+/* Design for lesson Title */
+.container .mainContent .lessonTitle {
+    text-align: left;
+    font-size: 45px;
+    margin-bottom: 30px;
+    border-bottom: 3px solid black;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+/* Design for content */
+.container .mainContent .content {
+    width: 100%;
+    text-align: left;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+/* Design for bold class */
+.container .mainContent .content p .bold {
+    font-weight: bold;
+}
+
+/* Design for powerpoint view */
+.container .mainContent .powerPointView {
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+}
+
+/* Design for sidebar */
+.container .mainContent .powerPointView .sidebar {
+    width: 20%;
+    height: 100%;
+    padding: 20px;
+    border-right: 2px solid black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    background-color: white;
+    border-radius: 10px 0 0 10px;
+}
+.container .mainContent .powerPointView .sidebar .slideBox {
+    display: flex;
+    gap: 10px;
+}
+.container .mainContent .powerPointView .sidebar .slideBox img {
+    height: 100px;
+    border-radius: 10px;
+    border: 2px solid gray;
+    cursor: pointer;
+}
+.container .mainContent .powerPointView .sidebar .slideBox img:hover {
+    transform: scale(1.05);
+    transition-duration: 0.3s;
+}
+
+/* Design for PPT main Content */
+.container .mainContent .powerPointView .pptMainContent {
+    height: 100%;
+    width: 100%;
+    border-radius: 0 10px 10px 0;
+}
+.container .mainContent .powerPointView .pptMainContent .slideContainer {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid black;
+}
+.container .mainContent .powerPointView .pptMainContent .slideContainer img {
+    height: 500px;
+    box-shadow: 5px 0 30px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Design for PPT navigations */
+.container .mainContent .powerPointView .pptMainContent .navigation {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+.container .mainContent .powerPointView .pptMainContent .navigation button {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.container .mainContent .powerPointView .pptMainContent .navigation button:nth-child(2) {
+    width: 20%;
+}
+.container .mainContent .powerPointView .pptMainContent .navigation button:active {
+    transform: scale(0.98);
+    transition-duration: 0.1s;
+}
+.container .mainContent .powerPointView .pptMainContent .navigation img {
+    height: 30px;
+}
+
+/* Design for much bigger text */
+.container .mainContent .content .muchBiggerText {
+    font-size: 40px;
+}
+
+/* ========================================================= */
+/* ====================== TABLET VIEW ====================== */
+/* ========================================================= */
+@media screen and (max-width: 768px) {
+    /* Design for image inside button */
+    .container .buttonContainer button img {
+        height: 20px;
+    }
+
+    /* Design for text inside button */
+    .container .buttonContainer button p {
+        font-size: 25px;
+    }
+
+    /* Design for Table of Content Links/Text */
+    .container .tableOfContent a {
+        font-size: 20px;
+    }
+
+    /* Design for view as button list */
+    .container .view .optionBtn {
+        font-size: 20px;
+    }
+
+    /* Desing for the image inside the view as buttons */
+    .container .view .optionBtn img {
+        height: 25px;
+    }
+
+    /* Design for the main title */
+    .container .mainContent .mainTitle {
+        font-size: 50px;
+    }
+
+    /* Design for lesson Title */
+    .container .mainContent .lessonTitle {
+        font-size: 40px;
+    }
+
+    /* Design for content */
+    .container .mainContent .content {
+        font-size: 25px;
+    }
+
+    /* Design for much bigger text */
+    .container .mainContent .content .muchBiggerText {
+        font-size: 25px;
+    }
+
+    /* Design for powerpoint view */
+    .container .mainContent .powerPointView {
+        flex-direction: column-reverse;
+    }
+    .container .mainContent .powerPointView .sidebar .slideBox img {
+        height: 70px;
+    }
+    .container .mainContent .powerPointView .pptMainContent .slideContainer {
+        height: 85%;
+    }
+    .container .mainContent .powerPointView .pptMainContent .slideContainer img {
+        height: 350px;
+    }
+    .container .mainContent .powerPointView .pptMainContent .navigation {
+        border-bottom: 2px solid black;
+        height: 15%;
+    }
+    .container .mainContent .powerPointView .pptMainContent .navigation button {
+        font-size: 20px;
+        padding: 20px;
+    }
+    .container .mainContent .powerPointView .sidebar {
+        width: 100%;
+        height: 20%;
+        border: none;
+        flex-direction: row;
+        gap: 30px;
+        border-radius: 0 0 10px 10px;
+    }
+}
+
+/* ========================================================= */
+/* ====================== MOBILE VIEW ====================== */
+/* ========================================================= */
+@media screen and (max-width: 430px) {
+    /* Design for table of content */
+    .container .tableOfContent {
+        width: 90%;
+    }
+
+    /* Design for view as container */
+    .container .tableOfContent {
+        top: 85px;
+    }
+
+    /* Design for "view as" options */
+    .container .view {
+        width: 90%;
+        top: 85px;
+        left: 5%;
+    }
+
+    /* Design for view as button list */
+    .container .view .optionBtn {
+        font-size: 20px;
+    }
+
+    /* Desing for the image inside the view as buttons */
+    .container .view .optionBtn img {
+        height: 30px;
+    }
+
+    /* Animation to show Table of Contents */
+    .showViewAnimation {
+        animation-name: showView;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+    }
+
+    /* Design for image inside button */
+    .container .buttonContainer button img {
+        height: 15px;
+    }
+
+    /* Design for text inside button */
+    .container .buttonContainer button p {
+        font-size: 20px;
+    }
+
+    /* Design for the main title */
+    .container .mainContent .mainTitle {
+        font-size: 40px;
+    }
+
+    /* Design for lesson Title */
+    .container .mainContent .lessonTitle {
+        font-size: 30px;
+    }
+
+    /* Design for content */
+    .container .mainContent .content {
+        font-size: 20px;
+    }
+
+    /* Design for much bigger text */
+    .container .mainContent .content .muchBiggerText {
+        font-size: 25px;
+    }
+
+    /* Design for PPT view */
+    .container .mainContent .powerPointView .pptMainContent .slideContainer img {
+        height: 170px;
+    }
+    .container .mainContent .powerPointView .pptMainContent .navigation button {
+        font-size: 15px;
+    }
+    .container .mainContent .powerPointView .sidebar {
+        overflow-y: hidden;
+    }
+}

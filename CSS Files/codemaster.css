@@ -1,0 +1,502 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Patrick Hand';
+}
+
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: #A67E52;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.container .table {
+    width: 100%;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container .table .upperTable {
+    height: 75px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+/*Design for back button container*/
+.container .backBtnContainer {
+    width: 100%;
+}
+.container .backBtnContainer button {
+    margin: 20px;
+    border-radius: 50%;
+    border: 3px solid black;
+    padding: 10px;
+}
+.container .backBtnContainer button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.container .backBtnContainer button:active {
+    transform: scale(0.95);
+}
+.container .backBtnContainer button img {
+    height: 30px;
+}
+
+/*Design for timer*/
+.container .table .upperTable .timer {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    align-items: center;
+}
+.container .table .upperTable .timer .timerButton {
+    width: 100px;
+    height: 10px;
+    border-radius: 10px 10px 0 0;
+    background-color: #5C2300;
+}
+.container .table .upperTable .timer .timerText {
+    background-color: white;
+    width: 40%;
+    font-size: 25px;
+    text-align: center;
+    border: 10px solid #253A3E;
+    border-radius: 10px;
+}
+.container .table .upperTable .timer .timerStand {
+    width: 38%;
+    height: 10px;
+    background-color: #253A3E;
+}
+
+/*Design for the book*/
+.container .table .upperTable .book {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    justify-content: end;
+}
+.container .table .upperTable .book .book1 {
+    margin-left: 30px;
+    width: 20%;
+    height: 20px;
+    background-color: #D3C117;
+    border-radius: 5px 5px 0 0;
+}
+.container .table .upperTable .book .book2 {
+    margin-left: 15px;
+    width: 35%;
+    height: 20px;
+    background-color: #41242A;
+    border-radius: 5px 5px 0 0;
+}
+.container .table .upperTable .book .book3 {
+    width: 45%;
+    height: 20px;
+    background-color: #A34946;
+    border-radius: 5px 5px 0 0;
+}
+
+/*Design for middle table*/
+.container .table .middleTable {
+    width: 50%;
+    height: 20px;
+    background-color: #4E514F;
+    border-radius: 5px;
+}
+
+/*Design for lower table*/
+.container .table .lowerTable {
+    width: 50%;
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+    margin-right: 50px;
+    margin-top: -10px;
+}
+.container .table .lowerTable #wrongCount {
+    background-color: #E27F70;
+    font-size: 50px;
+    padding: 10px 20px;
+    transform: rotate(10deg);
+}
+.container .table .lowerTable #correctCount {
+    background-color: #9BB79B;
+    font-size: 50px;
+    padding: 10px 20px;
+}
+
+/*Design for computer*/
+.container .computer {
+    margin-top: 30px;
+    height: 670px;
+    text-align: center;
+    width: 50%;
+}
+.container .computer .computer-head {
+    height: 500px;
+    text-align: center;
+    width: 100%;
+    height: 70%;
+    background-color: #DDDCCC;
+    border: 10px solid black;
+    border-radius: 15px;
+}
+.container .computer .computer-head .header {
+    width: 98.8%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: start;
+    text-align: left;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    background-color: #E27F70;
+    border-bottom: 3px solid black;
+}
+.container .computer .computer-head .header img {
+    height: 30px;
+}
+.container .computer .computer-head .header button {
+    background-color: #253a3e00;
+    border: none;
+    cursor: pointer;
+}
+.container .computer .computer-head .header button:active {
+    transform: scale(0.95);
+}
+.container .computer .computer-head .difficultyContainer {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    width: fit-content;
+    height: 85.7%;
+}
+.container .computer .computer-head .difficultyContainer img {
+    height: 70px;
+}
+.container .computer .computer-head .difficultyContainer img:active {
+    transform: scale(0.95);
+}
+.container .computer .computer-head .difficultyContainer p {
+    font-size: 25px;
+}
+.container .computer .computer-head .difficultyContainer button {
+    background-color: #253a3e00;
+    border: none;
+}
+
+/*Design for game mech*/
+.container .computer .computer-head .difficultyContainer .gameMech {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.container .computer .computer-head .difficultyContainer .gameMech .rule {
+    font-size: 40px;
+}
+.container .computer .computer-head .difficultyContainer .gameMech p, li {
+    font-size: 25px;
+}
+.container .computer .computer-head .difficultyContainer .gameMech button {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    font-size: 25px;
+    padding: 10px;
+    width: 50%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.container .computer .computer-head .difficultyContainer .gameMech button:active {
+    transform: scale(0.95);
+}
+
+/*Design for neck*/
+.container .computer .computer-neck {
+    height: 7%;
+    width: 20%;
+    background-color: black;
+    border-radius: 0 0 10px 10px;
+    margin: 0 auto;
+}
+
+/*Design for stand*/
+.container .computer .computer-stand {
+    height: 50px;
+    width: 40%;
+    background-color: black;
+    border-radius: 100px;
+    margin: -20px auto;
+}
+
+/*Design for chapter container*/
+.container .computer .computer-head #easyContainer,
+.container .computer .computer-head #normalContainer,
+.container .computer .computer-head #hardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    gap: 50px;
+    padding: 30px;
+    width: 85%;
+    background-color: lightblue;
+}
+.container .computer .computer-head #easyContainer,
+.container .computer .computer-head #normalContainer,
+.container .computer .computer-head #hardContainer {
+    background-color: #00000000;
+    border: none;
+}
+.container .computer .computer-head #easyContainer img,
+.container .computer .computer-head #normalContainer img,
+.container .computer .computer-head #hardContainer img {
+    height: 70px;
+}
+.container .computer .computer-head #easyContainer button,
+.container .computer .computer-head #normalContainer button,
+.container .computer .computer-head #hardContainer button {
+    background-color: #00000000;
+    border: none;
+}
+.container .computer .computer-head #easyContainer p,
+.container .computer .computer-head #normalContainer p,
+.container .computer .computer-head #hardContainer p
+button {
+    font-size: 25px;
+}
+
+@media screen and (max-width: 768px) {
+    /*Design for back button container*/
+    .container .backBtnContainer button img {
+        height: 20px;
+    }
+
+    .container .table {
+        padding: 0;
+    }
+    .container .table .upperTable {
+        width: 80%;
+    }
+    
+    /*Design for middle table*/
+    .container .table .middleTable {
+        width: 80%;
+    }
+
+    /*Design for lower table*/
+    .container .table .lowerTable {
+        width: 80%;
+    }
+    .container .table .lowerTable #wrongCount {
+        font-size: 35px;
+    }
+    .container .table .lowerTable #correctCount {
+        font-size: 35px;
+    }
+
+    .container .computer .computer-head {
+        height: 60%;
+    }
+    .container .computer {
+        width: 80%;
+    }
+
+    .container .computer .computer-head .difficultyContainer img {
+        height: 40px;
+    }
+    .container .computer .computer-head .difficultyContainer p {
+        font-size: 20px;
+    }
+
+    .container .computer .computer-head #easyContainer img,
+    .container .computer .computer-head #normalContainer img,
+    .container .computer .computer-head #hardContainer img {
+        height: 40px;
+    }
+    .container .computer .computer-head #easyContainer p,
+    .container .computer .computer-head #normalContainer p,
+    .container .computer .computer-head #hardContainer p {
+        flex-wrap: wrap;
+        height: 20px;
+    }
+
+    .container .computer .computer-head .header {
+        width: 98.5%;
+    }
+
+    /*Design for neck*/
+    .container .computer .computer-neck {
+        width: 30%;
+    }
+    
+    /*Design for stand*/
+    .container .computer .computer-stand {
+        width: 55%;
+    }
+
+    /*Design for game mech*/
+    .container .computer .computer-head .difficultyContainer .gameMech {
+        width: 80%;
+        margin-left: 30px;
+    }
+    .container .computer .computer-head .difficultyContainer .gameMech .rule {
+        font-size: 35px;
+    }
+    .container .computer .computer-head .difficultyContainer .gameMech p, li {
+        font-size: 20px;
+    }
+    .container .computer .computer-head .difficultyContainer .gameMech button {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    /*Design for timer*/
+    .container .table .upperTable .timer .timerButton {
+        width: 70px;
+        height: 5px;
+        border-radius: 10px 10px 0 0;
+        background-color: #5C2300;
+    }
+    .container .table .upperTable .timer .timerText {
+        width: 50%;
+        font-size: 20px;
+        border: 5px solid #253A3E;
+    }
+    .container .table .upperTable .timer .timerStand {
+        width: 48%;
+        height: 5px;
+    }
+
+    /*Design for middle table*/
+    .container .table .middleTable {
+        height: 15px;
+    }
+
+    /*Design for the book*/
+    .container .table .upperTable .book .book1 {
+        margin-left: 20px;
+        width: 30%;
+        height: 10px;
+        background-color: #D3C117;
+        border-radius: 5px 5px 0 0;
+    }
+    .container .table .upperTable .book .book2 {
+        margin-left: 10px;
+        width: 55%;
+        height: 10px;
+    }
+    .container .table .upperTable .book .book3 {
+        width: 80%;
+        height: 10px;
+    }
+
+    /*Design for lower table*/
+    .container .table .lowerTable {
+        margin-top: -10px;
+    }
+    .container .table .lowerTable #wrongCount {
+        font-size: 20px;
+        padding: 15px 15px;
+    }
+    .container .table .lowerTable #correctCount {
+        font-size: 20px;
+        padding: 15px 15px;
+    }
+
+    .container .computer {
+        margin-top: 100px;
+        width: 90%;
+    }
+
+    /*Design for computer head*/
+    .container .computer {
+        margin-top: 10px;
+        width: 90%;
+    }
+    .container .computer .computer-head {
+        width: 95%;
+        height: 40%;
+        border: 5px solid black;
+        border-radius: 10px;
+    }
+
+    /*Design for neck*/
+    .container .computer .computer-neck {
+        width: 20%;
+    }
+    
+    /*Design for stand*/
+    .container .computer .computer-stand {
+        width: 55%;
+        height: 3%;
+    }
+    .container .computer .computer-head .header {
+        width: 97.2%;
+    }
+    .container .computer .computer-head .header img {
+        height: 20px;
+    }
+
+    .container .computer .computer-head #easyContainer,
+    .container .computer .computer-head #normalContainer,
+    .container .computer .computer-head #hardContainer  {
+        padding: 5px;
+        width: 100%;
+        gap: 20px;
+    }
+    .container .computer .computer-head #easyContainer img,
+    .container .computer .computer-head #normalContainer img,
+    .container .computer .computer-head #hardContainer img {
+        height: 35px;
+    }
+    .container .computer .computer-head #easyContainer p,
+    .container .computer .computer-head #normalContainer p,
+    .container .computer .computer-head #hardContainer p {
+        font-size: 20px;
+    }
+
+    /*Design for game mech*/
+    .container .computer .computer-head .difficultyContainer {
+        grid-template-columns: repeat(4,1fr);
+        width: fit-content;
+        height: 85.7%;
+        transform: scale(0.85);
+    }
+    .container .computer .computer-head .difficultyContainer .gameMech .rule {
+        font-size: 25px;
+    }
+    .container .computer .computer-head .difficultyContainer .gameMech p, li {
+        font-size: 15px;
+    }
+    .container .computer .computer-head .difficultyContainer .gameMech button {
+        padding: 5px;
+    }
+
+    .container .computer .computer-head .difficultyContainer {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
